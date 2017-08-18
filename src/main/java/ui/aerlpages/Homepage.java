@@ -44,26 +44,6 @@ public class Homepage extends AbstractPage {
         driver.findElement(destinationField).sendKeys(route.getDestination());
         clickElementByLocator(suggestion, "suggestion");
     }
-/*
-    public void sendKeysOrigin(String originCity){
-        driver.findElement(originField).sendKeys(originCity);
-    }
-
-    public void clickOriginSuggestion(){
-        driver.findElement(suggestion).click();
-    }
-
-    public void clickDestination(){
-        driver.findElement(destinationField).click();
-    }
-
-    public void sendKeysDestination(String destinationCity){
-        driver.findElement(destinationField).sendKeys(destinationCity);
-    }
-
-    public void clickDestinationSuggestion(){
-        driver.findElement(suggestion).click();
-    }*/
 
     public void clickFindFlightButton(){
         super.waitHighlightAndClickElement(findFlightButton, "Find Flight button");

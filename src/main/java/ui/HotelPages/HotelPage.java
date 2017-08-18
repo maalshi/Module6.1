@@ -41,22 +41,18 @@ public class HotelPage extends AbstractPage {
     }
 
     public String verifyWereChangingText(){
-        // waitElement(wereChangingText);
         return wereChangingText.getText();
     }
 
     public String verifyNewHotelsPartnerText(){
-        //waitElement(newHotelPatnersText);
         return newHotelPatnersText.getText();
     }
 
     public String verifyWerePartneringText(){
-        // waitElement(werePatneringText);
         return werePatneringText.getText();
     }
 
     public void clickButtonSearchFlights(){
-        // waitElement(wereChangingText);
         buttonSearchFlights.click();
     }
 }
