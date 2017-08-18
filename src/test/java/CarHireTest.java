@@ -1,7 +1,5 @@
 import businessobjects.CarHireDetails;
 import businessobjects.Constants;
-import businessobjects.FlightRoute;
-import businessobjects.Route;
 import org.testng.annotations.Test;
 import ui.CarHirePages.CarHireResults;
 import ui.CarHirePages.CarHireSearch;
@@ -35,7 +33,7 @@ public class CarHireTest extends BaseTest {
         search.clickInboundDate();
         search.clickSearchButton();
         CarHireResults results = new CarHireResults(driver);
-        AssertUtil.assertEquals(results.getOutboundAirportText(), String.valueOf(new FlightRoute(Constants.OUTBOUND_ROUTE, Constants.INBOUND_ROUTE)));
+        AssertUtil.assertEquals(results.getOutboundAirportText(),"Dublin - Airport");
         AssertUtil.assertEquals(results.getInboundAirportText(),"Dublin - Airport");
     }
 }
