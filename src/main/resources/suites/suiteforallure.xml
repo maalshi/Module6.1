@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name = "Allure" verbose ="1" parallel="false">
+    <test name="Allure">
+        <classes>
+            <class name="FlightTest">
+            </class>
+            <class name="CarHireTest">
+            </class>
+            <class name="YandexTest">
+            </class>
+        </classes>
+    </test>
+</suite>

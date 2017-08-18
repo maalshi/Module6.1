@@ -12,7 +12,6 @@ import ui.AbstractPage;
  * Created by Maryia_Shynkarenka on 6/9/2017.
  */
 public class FlightResultsPage extends AbstractPage{
-    WebDriver driver;
 
     @FindBy(xpath = "//button[@data-test-id='test_continue_btn']")
     WebElement continueButton;
@@ -29,8 +28,7 @@ public class FlightResultsPage extends AbstractPage{
         PageFactory.initElements(driver, this);
     }
     public void clickContinue(){
-        waitElement(continueButton);
-        continueButton.click();
+        clickWebElement(continueButton, "Continue Button");
     }
 
     public String getOutboundText(){

@@ -14,9 +14,6 @@ import ui.AbstractPage;
  */
 public class HotelPage extends AbstractPage {
 
-    WebDriver driver;
-    WebDriverWait wait;
-
     @FindBy(id = "green-search-dates-flights_IE-EUR")
     WebElement buttonSearchFlights;
 
@@ -34,7 +31,7 @@ public class HotelPage extends AbstractPage {
 
     public HotelPage (WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver, 20);
         PageFactory.initElements(driver, this);
     }
 
@@ -60,6 +57,6 @@ public class HotelPage extends AbstractPage {
     }
 
     public void clickButtonSearchFlights(){
-        clickWebElement(buttonSearchFlights);
+        clickWebElement(buttonSearchFlights, "Click Search Flights button");
     }
 }

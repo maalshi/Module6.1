@@ -1,4 +1,5 @@
 import businessobjects.CarHireDetails;
+import businessobjects.Constants;
 import org.testng.annotations.Test;
 import ui.CarHirePages.CarHireResults;
 import ui.CarHirePages.CarHireSearch;
@@ -24,8 +25,7 @@ public class CarHireTest extends BaseTest {
         }
 
         CarHireSearch search = new CarHireSearch(driver);
-        search.sendKeysPickUpLocation(new CarHireDetails("dublin"));
-        //winHandleBefore = driver.getWindowHandle();
+        search.sendKeysPickUpLocation(new CarHireDetails(Constants.CITY()));
         search.clickSuggestion();
         search.clickStartDate();
         search.clickOutboiundDate();
@@ -33,7 +33,6 @@ public class CarHireTest extends BaseTest {
         search.clickInboundDate();
         search.clickSearchButton();
         CarHireResults results = new CarHireResults(driver);
-        //AssertUtil util = new AssertUtil();
         AssertUtil.assertEquals(results.getOutboundAirportText(),"Dublin - Airport");
         AssertUtil.assertEquals(results.getInboundAirportText(),"Dublin - Airport");
     }

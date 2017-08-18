@@ -12,9 +12,6 @@ import ui.AbstractPage;
  */
 public class PaxInfoPage extends AbstractPage {
 
-    WebDriver driver;
-    WebDriverWait wait;
-
     @FindBy(xpath = "//option[text()='Mr']")
     WebElement titleMr;
 
@@ -46,36 +43,34 @@ public class PaxInfoPage extends AbstractPage {
     }
 
     public void clickTitleMr(){
-        waitElement (titleMr);
-        titleMr.click();
+        clickWebElement(titleMr, "Title Mr");
     }
 
     public void sendKeysFirstName(String name){
-        firstName.sendKeys(name);
+        sendKeysWebElement(firstName, name, "Name");
     }
 
     public void sendKeysFamilyName(String surname){
-       familyName.sendKeys(surname);
+        sendKeysWebElement(familyName, surname, "Family name");
     }
 
     public void sendKeysEmail(String emailAddress){
-       email.sendKeys(emailAddress);
+        sendKeysWebElement(email, emailAddress, "Email");
     }
 
     public void sendKeysConfirmEmail(String confirmEmailAddress){
-        confirmEmail.sendKeys(confirmEmailAddress);
+        sendKeysWebElement(confirmEmail, confirmEmailAddress, "Confirm Email");
     }
 
     public void sendKeysAreaCode(String area){
-        areaCode.sendKeys(area);
+        sendKeysWebElement(areaCode, area, "Area Code");
     }
 
     public void sendKeysLocalNumber(String local){
-        localNumber.sendKeys(local);
+        sendKeysWebElement(localNumber, local, "Local Number");
     }
 
     public void clickContinue(){
-        waitElement(continueButton);
-        continueButton.click();
+       clickWebElement(continueButton, "Continue button");
     }
 }

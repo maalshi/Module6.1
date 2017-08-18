@@ -15,9 +15,6 @@ import ui.AbstractPage;
  */
 public class CarHireSearch extends AbstractPage {
 
-    WebDriver driver;
-    WebDriverWait wait;
-
     @FindBy(id = "pickupLocation")
     WebElement pickUpField;
 
@@ -51,26 +48,26 @@ public class CarHireSearch extends AbstractPage {
     }
 
     public void clickSuggestion(){
-       clickWebElement(suggestion);
+       clickWebElement(suggestion, "Suggestion");
     }
 
     public void clickStartDate(){
-        clickWebElement(startDate);
+        clickWebElement(startDate, "Start date");
     }
 
     public void clickOutboiundDate(){
-       clickWebElement(outboundDate);
+       clickWebElement(outboundDate, "Start Date");
     }
 
     public void clickEndDate(){
-        clickWebElement(endDate);
+        clickWebElement(endDate, "End Date");
     }
 
     public void clickInboundDate(){
-        clickWebElement(inboundDate);
+        clickWebElement(inboundDate, "End Date");
     }
 
     public void clickSearchButton(){
-        clickWebElement(searchButton);
+        clickWebElement(searchButton, "Search Button");
     }
 }

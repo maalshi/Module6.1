@@ -1,3 +1,4 @@
+import businessobjects.Constants;
 import org.testng.annotations.Test;
 import ui.aerlpages.FlightResultsPage;
 import ui.aerlpages.Homepage;
@@ -12,7 +13,7 @@ public class FlightTest extends BaseTest {
        public void search(){
         driver.get("https://www.aerlingus.com/html/en-US/home.html");
         Homepage homepage = new Homepage(driver);
-        homepage.setRoute(new Route("dublin","paris"));
+        homepage.setRoute(new Route(Constants.ORIGIN(), Constants.DESTINATION()));
         homepage.clickFindFlightButton();
         FlightResultsPage flightresults = new FlightResultsPage(driver);
         AssertUtil.assertEquals(flightresults.getOutboundText(), "Dublin to Paris");

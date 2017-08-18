@@ -8,9 +8,9 @@ import businessobjects.Route;
 
 public class Homepage extends AbstractPage {
 
-    By originField = By.xpath("//*[@id='origin']/div");
-    By suggestion = By.xpath("//li[contains(@id,'typeahead')][1]");
-    By destinationField = By.xpath("//*[@id='dest']/div");
+    By originField = By.xpath("//input[@id='origin']");
+    By suggestion = By.xpath("//a[@data-test-id='test_booker_list_of_cities']");
+    By destinationField = By.xpath("//input[@id='dest']");
     By findFlightButton = By.xpath("//button[@data-test-id='test_booker_search']");
 
 
@@ -35,16 +35,16 @@ public class Homepage extends AbstractPage {
     }
 
     public void setRoute (Route route){
-        waitElement(originField);
-        driver.findElement(originField).click();
+        clickElementByLocator(originField, "Origin");
         driver.findElement(originField).clear();
+        //sendKeysElementByLocator(driver.findElement(originField), "Send Keys origin");
         driver.findElement(originField).sendKeys(route.getOrigin());
-        driver.findElement(suggestion).click();
+        clickElementByLocator(suggestion, "suggestion");
         waitElement(destinationField);
         driver.findElement(destinationField).sendKeys(route.getDestination());
-        driver.findElement(suggestion).click();
+        clickElementByLocator(suggestion, "suggestion");
     }
-
+/*
     public void sendKeysOrigin(String originCity){
         driver.findElement(originField).sendKeys(originCity);
     }
@@ -63,31 +63,25 @@ public class Homepage extends AbstractPage {
 
     public void clickDestinationSuggestion(){
         driver.findElement(suggestion).click();
-    }
+    }*/
 
     public void clickFindFlightButton(){
-        waitElement(findFlightButton);
         super.waitHighlightAndClickElement(findFlightButton);
-        driver.findElement(findFlightButton).click();
     }
 
     public void clickTabHotel(){
-        waitElement(tabHotel);
-        driver.findElement(tabHotel).click();
+        clickElementByLocator(tabHotel, "Tab Hotel Button");
     }
 
     public void clickButtonViewHotels(){
-        waitElement(buttonViewHotels);
-        driver.findElement(buttonViewHotels).click();
+        clickElementByLocator(buttonViewHotels, "View Hotel button");
     }
 
     public void clickTabCarHire(){
-        waitElement(tabCarHire);
-        driver.findElement(tabCarHire).click();
+        clickElementByLocator(tabCarHire, "Tab Car Hire");
     }
 
     public void clickButtonMoreInfo(){
-        waitElement(buttonMoreInfo);
-        driver.findElement(buttonMoreInfo).click();
+        clickElementByLocator(buttonMoreInfo, "button More info");
     }
 }

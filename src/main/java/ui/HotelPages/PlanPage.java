@@ -11,9 +11,6 @@ import ui.AbstractPage;
  */
 public class PlanPage extends AbstractPage {
 
-    WebDriver driver;
-    WebDriverWait wait;
-
     By textBookFlights = By.xpath("//div[contains(@class,'page-header')]//h2");//By.className("h2-lrg centered ng-binding");
 
     public PlanPage(WebDriver driver) {

@@ -13,9 +13,6 @@ import businessobjects.YandexLogin;
  */
 public class Yandex extends AbstractPage {
 
-    WebDriver driver;
-    WebDriverWait wait;
-
     @FindBy(xpath = "//input[@name='login']")
     WebElement loginField;
 
@@ -36,11 +33,21 @@ public class Yandex extends AbstractPage {
 
     public void yandexLogin(YandexLogin yandexLogin){
         waitElement(loginField);
-        loginField.sendKeys(yandexLogin.getLogin());
-        passwordField.sendKeys(yandexLogin.getPassword());
+        sendKeysWebElement(loginField, "maria1.tester", "Login");
+        sendKeysWebElement(passwordField, "Pasword1", "Password");
+    }
+
+    public void sendKeysLogin(String login){
+        waitElement(loginField);
+        loginField.sendKeys(login);
+    }
+
+    public void sendKeysPassword (String password){
+        waitElement(loginField);
+        passwordField.sendKeys(password);
     }
 
     public void clickSubmitButton(){
-        buttonSubmit.click();
+        clickWebElement(buttonSubmit, "Submit button");
     }
 }

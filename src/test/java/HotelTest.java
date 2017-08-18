@@ -8,7 +8,7 @@ public class HotelTest extends BaseTest {
 
     @Test
     public void verifyHotels() {
-        driver.get("https://www.aerlingus.com/html/en-US/home.html");
+        driver.get("https://www-deva2.aerlingus.com/html/en-US/home.html");
         Homepage homepage = new Homepage(driver);
         homepage.clickTabHotel();
         String winHandleBefore = driver.getWindowHandle();
