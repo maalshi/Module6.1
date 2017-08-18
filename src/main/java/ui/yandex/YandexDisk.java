@@ -79,7 +79,7 @@ public class YandexDisk extends AbstractPage {
     }
 
     public YandexDisk clickDisk(){
-        wait.until(ExpectedConditions.elementToBeClickable(disk));
+        waitElement(disk);
         disk.click();
         return this;
     }
@@ -93,13 +93,13 @@ public class YandexDisk extends AbstractPage {
 
     public YandexDisk movePictureIntoBin(WebElement picture){
         super.dragAndDrop(picture, bin);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='notifications__text js-message']")));
+        waitElement(By.xpath("//div[@class='notifications__text js-message']"));
         return this;
     }
 
     public YandexDisk clickBin(){
-        wait.until(ExpectedConditions.elementToBeClickable(bin));
-        bin.click();
+        waitElement(bin);
+        clickWebElement(bin, "Bin");
         return this;
     }
 
@@ -112,15 +112,14 @@ public class YandexDisk extends AbstractPage {
 
     public YandexDisk clickRestoreButton(){
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@class='notifications__text js-message']")));
-        wait.until(ExpectedConditions.elementToBeClickable(buttonRestore));
-        buttonRestore.click();
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='notifications__text js-message']")));
+        clickWebElement(buttonRestore, "Button Restore");
+        waitElement(By.xpath("//div[@class='notifications__text js-message']"));
         return this;
     }
 
     public YandexDisk returnToDisk(){
-        wait.until(ExpectedConditions.elementToBeClickable(diskReturn));
-        diskReturn.click();
+        waitElement(diskReturn);
+        clickWebElement(diskReturn, "Return to disk button");
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//span[@class='crumbs__current' and text()='Корзина']")));
         return this;
     }

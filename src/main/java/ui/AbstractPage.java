@@ -22,6 +22,7 @@ public abstract class AbstractPage{
 
     public void dragAndDrop(WebElement toBeDragged, WebElement target){
         new Actions(driver).dragAndDrop(toBeDragged, target).build().perform();
+        LOGGER.info("Object dragged and dropped");
     }
 
     public void waitElement (WebElement element){
@@ -32,20 +33,23 @@ public abstract class AbstractPage{
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(locator)));
     }
 
-    public void jsClick(WebElement element){
+    public void jsClick(WebElement element, String name){
         ((JavascriptExecutor)driver).executeScript("arguments[0].click();", element);
+        LOGGER.info("Click element (js) " + name);
     }
 
-    public void waitHighlightAndClickElement(By locator){
+    public void waitHighlightAndClickElement(By locator, String name){
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(locator)));
         ((JavascriptExecutor)driver).executeScript("arguments[0].style.backgroundColor='red'", driver.findElement(locator));
         driver.findElement(locator).click();
+        LOGGER.info("Element [" + name + "] hightlighted and clicked");
     }
 
-    public void waitHighlightAndClickElement(WebElement element){
+    public void waitHighlightAndClickElement(WebElement element, String name){
         wait.until(ExpectedConditions.elementToBeClickable(element));
         ((JavascriptExecutor)driver).executeScript("arguments[0].style.backgroundColor='red'", element);
         element.click();
+        LOGGER.info("Element [" + name + "] hightlighted and clicked");
     }
 
     public void waitForElementInvisible(By locator){
@@ -76,20 +80,8 @@ public abstract class AbstractPage{
         driver.findElement(locator).sendKeys(value);
     }
 
-    private static final String SCREENSHOTS_NAME_TPL = "screenshots/scr";
 
-    public static void takeScreenshot() {
-        WebDriver driver = WebDriverSingleton.getWebDriverInstance();
-        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-        try {
-            String screenshotName = SCREENSHOTS_NAME_TPL + System.nanoTime();
-            File copy = new File(screenshotName + ".png");
-            FileUtils.copyFile(screenshot, copy);
-            LOGGER.info("Saved screenshot: " + screenshotName);
-        } catch (IOException e) {
-            LOGGER.error("Failed to make screenshot");
-        }
-    }
+
 }
 
 

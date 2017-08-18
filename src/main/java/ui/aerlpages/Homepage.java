@@ -66,7 +66,7 @@ public class Homepage extends AbstractPage {
     }*/
 
     public void clickFindFlightButton(){
-        super.waitHighlightAndClickElement(findFlightButton);
+        super.waitHighlightAndClickElement(findFlightButton, "Find Flight button");
     }
 
     public void clickTabHotel(){

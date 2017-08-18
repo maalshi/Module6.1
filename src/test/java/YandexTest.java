@@ -21,7 +21,7 @@ public class YandexTest extends BaseTest {
         Yandex yandex = new Yandex(driver);
         //yandex.sendKeysLogin("maria1.tester");
         //yandex.sendKeysPassword("Password1");
-        yandex.yandexLogin(new YandexLogin(Constants.login(), Constants.password()));
+        yandex.yandexLogin(new YandexLogin(Constants.LOGIN_YANDEX, Constants.PASSWORD));
         yandex.clickSubmitButton();
 
         YandexDisk disk = new YandexDisk(driver);

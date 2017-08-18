@@ -35,28 +35,28 @@ public class HotelPage extends AbstractPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void assertHotelsText(){
+    public String verifyHotelsText(){
         waitElement(buttonSearchFlights);
-        Assert.assertEquals("Hotels", hotelText.getText());
+        return hotelText.getText();
     }
 
-    public void verifyWereChangingText(){
-        waitElement(wereChangingText);
-        Assert.assertEquals("We're changing our Hotels partner", wereChangingText.getText());
+    public String verifyWereChangingText(){
+        // waitElement(wereChangingText);
+        return wereChangingText.getText();
     }
 
-    public void verifyNewHotelsPartnerText(){
-        waitElement(newHotelPatnersText);
-        Assert.assertEquals("New Hotels partner coming soon!", newHotelPatnersText.getText());
+    public String verifyNewHotelsPartnerText(){
+        //waitElement(newHotelPatnersText);
+        return newHotelPatnersText.getText();
     }
 
-    public void verifyWerePartneringText(){
-        waitElement(werePatneringText);
-        Assert.assertEquals("We are partnering with one of the world's leading accommodation suppliers with over a million properties throughout 225 countries worldwide.You can also look forward to superior booking functionality and payment options, and customer service tailored to your needs.\n" +
-                "Flights and hotels sorted!", werePatneringText.getText());
+    public String verifyWerePartneringText(){
+        // waitElement(werePatneringText);
+        return werePatneringText.getText();
     }
 
     public void clickButtonSearchFlights(){
-        clickWebElement(buttonSearchFlights, "Click Search Flights button");
+        // waitElement(wereChangingText);
+        buttonSearchFlights.click();
     }
 }

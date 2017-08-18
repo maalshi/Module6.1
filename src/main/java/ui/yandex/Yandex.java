@@ -1,5 +1,6 @@
 package ui.yandex;
 
+import businessobjects.Constants;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -33,8 +34,8 @@ public class Yandex extends AbstractPage {
 
     public void yandexLogin(YandexLogin yandexLogin){
         waitElement(loginField);
-        sendKeysWebElement(loginField, "maria1.tester", "Login");
-        sendKeysWebElement(passwordField, "Pasword1", "Password");
+        sendKeysWebElement(loginField, yandexLogin.getLogin(), "Login");
+        sendKeysWebElement(passwordField, yandexLogin.getPassword(), "Password");
     }
 
     public void sendKeysLogin(String login){

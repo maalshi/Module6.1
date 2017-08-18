@@ -4,21 +4,19 @@ public class Constants {
 
 
     //Yandex Test
-    public static String login (){
-        return "maria1.tester";
-    }
-    public static String password (){
-        return "Password1";
-    }
+    public static final String LOGIN_YANDEX = "maria1.tester";
+
+    public static final String PASSWORD = "Password1";
+
 
     //Car Hire test
-    public static String CITY (){
+    public static String CITY(){
         return "dublin";
     }
-    public static String OUTBOUNDDATE (){
+    public String OUTBOUNDDATE (){
         return "day-201791";
     }
-    public static String INBOUNDDATE (){
+    public String INBOUNDDATE (){
         return "day-201792";
     }
 
