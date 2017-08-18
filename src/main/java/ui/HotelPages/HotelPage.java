@@ -35,20 +35,20 @@ public class HotelPage extends AbstractPage {
         PageFactory.initElements(driver, this);
     }
 
-    public String verifyHotelsText(){
+    public String getHotelsText(){
         waitElement(buttonSearchFlights);
         return hotelText.getText();
     }
 
-    public String verifyWereChangingText(){
+    public String getWereChangingText(){
         return wereChangingText.getText();
     }
 
-    public String verifyNewHotelsPartnerText(){
+    public String getNewHotelsPartnerText(){
         return newHotelPatnersText.getText();
     }
 
-    public String verifyWerePartneringText(){
+    public String getWerePartneringText(){
         return werePatneringText.getText();
     }
 

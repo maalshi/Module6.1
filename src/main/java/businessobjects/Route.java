@@ -5,6 +5,7 @@ public class Route {
     private String origin = "dublin";
     private String destination = "paris";
 
+
     public Route(String origin, String destination) {
         this.origin = origin;
         this.destination = destination;
@@ -25,4 +26,5 @@ public class Route {
     public void setDestination(String destination) {
         this.destination = destination;
     }
+
 }

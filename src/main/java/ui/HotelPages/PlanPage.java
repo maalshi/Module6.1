@@ -18,7 +18,7 @@ public class PlanPage extends AbstractPage {
         wait = new WebDriverWait(driver, 20);
     }
 
-    public String verifyTextBookFlights(){
+    public String getTextBookFlights(){
         waitForElementInvisible(By.xpath("//div[@class='spinner']"));
         waitElement(textBookFlights);
         return driver.findElement(textBookFlights).getText();
